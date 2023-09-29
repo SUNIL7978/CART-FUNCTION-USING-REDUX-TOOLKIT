@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Cartcontainer from './components/Cartcontainer';
 import NavBar from './components/NavBar';
 import { useEffect } from 'react';
-import { calculationTotal, getCartItems } from './Fetures/Cart/CartSlice';
+import { calculationTotal } from './Fetures/Cart/CartSlice';
 import Modal from './components/Modal';
 
 function App() {
@@ -14,17 +14,17 @@ function App() {
     dispatch(calculationTotal());
   }, [cartItems, dispatch]);
 
-  useEffect(() => {
-    dispatch(getCartItems());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getCartItems());
+  // }, [dispatch]);
 
-  if (isLoading) {
-    return (
-      <div className="loading">
-        <h1>Loading...</h1>
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div className="loading">
+  //       <h1>Loading...</h1>
+  //     </div>
+  //   );
+  // }
   return (
     <main>
       {isOpen && <Modal />}
